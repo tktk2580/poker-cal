@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="range">
+      <a href="poker.html" class="rangeElement">normal</a>
+      <a href="poker1.html" class="rangeElement">level1(blue)</a>
+      <a href="poker2.html" class="rangeElement">level2(red)</a>
+      <a href="poker3.html" class="rangeElement">level3(yellow)</a>
+      <a href="poker4.html" class="rangeElement">level4(lightgreen)</a>
+      <a href="poker5.html" class="rangeElement">level5(lightblue)</a>
+      <a href="poker6.html" class="rangeElement">level6(white)</a>
+    </div>
+    <p>ボード：<input value='0' id="inputBoard"></p>
+    <p>ハンド：<input value='0' id="inputHand"></p>
+    <button onclick="board();">board</button>
+    <div id="board">
+      <p id="board1" class="boardElement"></p>
+      <p id="board2" class="boardElement"></p>
+      <p id="board3" class="boardElement"></p>
+      <p id="board4" class="boardElement"></p>
+      <p id="board5" class="boardElement"></p>
+    </div>
+    <div id="hand">
+      <p id="hand1" class="handElement"></p>
+      <p id="hand2" class="handElement"></p>
+    </div>
+    <div class="calculationBoard">
+      <table class="calculationBoardElement">
+        <tr>
+          <th></th>
+          <th class="">A</th>
+          <th class="">K</th>
+          <th class="">Q</th>
+          <th class="">J</th>
+          <th class="">T</th>
+          <th class="">9</th>
+          <th class="">8</th>
+          <th class="">7</th>
+          <th class="">6</th>
+          <th class="">5</th>
+          <th class="">4</th>
+          <th class="">3</th>
+          <th class="">2</th>
+        </tr>
+        <tr>
+          <th>A</th>
+          <td class="hand pocket level1 ">AA</td>
+          <td class="hand suit level1 ">AKs</td>
+          <td class="hand suit level2 ">AQs</td>
+          <td class="hand suit level2 ">AJs</td>
+          <td class="hand suit level2 ">ATs</td>
+          <td class="hand suit level4 ">A9s</td>
+          <td class="hand suit level4 ">A8s</td>
+          <td class="hand suit level4 ">A7s</td>
+          <td class="hand suit level4 ">A6s</td>
+          <td class="hand suit level4 ">A5s</td>
+          <td class="hand suit level4 ">A4s</td>
+          <td class="hand suit level4 ">A3s</td>
+          <td class="hand suit level4 ">A2s</td>
+        </tr>
+        <tr>
+          <th>K</th>
+          <td class="hand offsuit level1 ">AKo</td>
+          <td class="hand pocket level1 ">KK</td>
+          <td class="hand suit level2 ">KQs</td>
+          <td class="hand suit level3 ">KJs</td>
+          <td class="hand suit level4 ">KTs</td>
+          <td class="hand suit level4 ">K9s</td>
+          <td class="hand suit level6 ">K8s</td>
+          <td class="hand suit level6 ">K7s</td>
+          <td class="hand suit level6 ">K6s</td>
+          <td class="hand suit level6 ">K5s</td>
+          <td class="hand suit level6 ">K4s</td>
+          <td class="hand suit level6 ">K3s</td>
+          <td class="hand suit level6 ">K2s</td>
+        </tr>
+        <tr>
+          <th>Q</th>
+          <td class="hand offsuit level2 ">AQo</td>
+          <td class="hand offsuit level3 ">KQo</td>
+          <td class="hand pocket level1 ">QQ</td>
+          <td class="hand suit level3 ">QJs</td>
+          <td class="hand suit level4 ">QTs</td>
+          <td class="hand suit level5 ">Q9s</td>
+          <td class="hand suit level6 ">Q8s</td>
+          <td class="hand suit level6 ">Q7s</td>
+          <td class="hand suit level6 ">Q6s</td>
+          <td class="hand suit">Q5s</td>
+          <td class="hand suit">Q4s</td>
+          <td class="hand suit">Q3s</td>
+          <td class="hand suit">Q2s</td>
+        </tr>
+        <tr>
+          <th>J</th>
+          <td class="hand offsuit level3 ">AJo</td>
+          <td class="hand offsuit level4 ">KJo</td>
+          <td class="hand offsuit level5 ">QJo</td>
+          <td class="hand pocket level2 ">JJ</td>
+          <td class="hand suit level3 ">JTs</td>
+          <td class="hand suit level5 ">J9s</td>
+          <td class="hand suit level6 ">J8s</td>
+          <td class="hand suit level6 ">J7s</td>
+          <td class="hand suit">J6s</td>
+          <td class="hand suit">J5s</td>
+          <td class="hand suit">J4s</td>
+          <td class="hand suit">J3s</td>
+          <td class="hand suit">J2s</td>
+        </tr>
+        <tr>
+          <th>T</th>
+          <td class="hand offsuit level4 ">ATo</td>
+          <td class="hand offsuit level5 ">KTo</td>
+          <td class="hand offsuit level6 ">QTo</td>
+          <td class="hand offsuit level5 ">JTo</td>
+          <td class="hand pocket level2 ">TT</td>
+          <td class="hand suit level4 ">T9s</td>
+          <td class="hand suit level5 ">T8s</td>
+          <td class="hand suit">T7s</td>
+          <td class="hand suit">T6s</td>
+          <td class="hand suit">T5s</td>
+          <td class="hand suit">T4s</td>
+          <td class="hand suit">T3s</td>
+          <td class="hand suit">T2s</td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <td class="hand offsuit level5 ">A9o</td>
+          <td class="hand offsuit level6 ">K9o</td>
+          <td class="hand offsuit level6 ">Q9o</td>
+          <td class="hand offsuit level6 ">J9o</td>
+          <td class="hand offsuit level6 ">T9o</td>
+          <td class="hand pocket level2 ">99</td>
+          <td class="hand suit level5 ">98s</td>
+          <td class="hand suit level6 ">97s</td>
+          <td class="hand suit">96s</td>
+          <td class="hand suit">95s</td>
+          <td class="hand suit">94s</td>
+          <td class="hand suit">93s</td>
+          <td class="hand suit">92s</td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td class="hand offsuit level6 ">A8o</td>
+          <td class="hand offsuit">K8o</td>
+          <td class="hand offsuit">Q8o</td>
+          <td class="hand offsuit">J8o</td>
+          <td class="hand offsuit">T8o</td>
+          <td class="hand offsuit">98o</td>
+          <td class="hand pocket level3 ">88</td>
+          <td class="hand suit level6 ">87s</td>
+          <td class="hand suit">86s</td>
+          <td class="hand suit">85s</td>
+          <td class="hand suit">84s</td>
+          <td class="hand suit">83s</td>
+          <td class="hand suit">82s</td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td class="hand offsuit level6 ">A7o</td>
+          <td class="hand offsuit">K7o</td>
+          <td class="hand offsuit">Q7o</td>
+          <td class="hand offsuit">J7o</td>
+          <td class="hand offsuit">T7o</td>
+          <td class="hand offsuit">97o</td>
+          <td class="hand offsuit">87o</td>
+          <td class="hand pocket level3 ">77</td>
+          <td class="hand suit level6 ">76s</td>
+          <td class="hand suit">75s</td>
+          <td class="hand suit">74s</td>
+          <td class="hand suit">73s</td>
+          <td class="hand suit">72s</td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td class="hand offsuit">A6o</td>
+          <td class="hand offsuit">K6o</td>
+          <td class="hand offsuit">Q6o</td>
+          <td class="hand offsuit">J6o</td>
+          <td class="hand offsuit">T6o</td>
+          <td class="hand offsuit">96o</td>
+          <td class="hand offsuit">86o</td>
+          <td class="hand offsuit">76o</td>
+          <td class="hand pocket level4 ">66</td>
+          <td class="hand suit level6 ">65s</td>
+          <td class="hand suit">64s</td>
+          <td class="hand suit">63s</td>
+          <td class="hand suit">62s</td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td class="hand offsuit">A5o</td>
+          <td class="hand offsuit">K5o</td>
+          <td class="hand offsuit">Q5o</td>
+          <td class="hand offsuit">J5o</td>
+          <td class="hand offsuit">T5o</td>
+          <td class="hand offsuit">95o</td>
+          <td class="hand offsuit">85o</td>
+          <td class="hand offsuit">75o</td>
+          <td class="hand offsuit">65o</td>
+          <td class="hand pocket level4 ">55</td>
+          <td class="hand suit">54s</td>
+          <td class="hand suit">53s</td>
+          <td class="hand suit">52s</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td class="hand offsuit">A4o</td>
+          <td class="hand offsuit">K4o</td>
+          <td class="hand offsuit">Q4o</td>
+          <td class="hand offsuit">J4o</td>
+          <td class="hand offsuit">T4o</td>
+          <td class="hand offsuit">94o</td>
+          <td class="hand offsuit">84o</td>
+          <td class="hand offsuit">74o</td>
+          <td class="hand offsuit">64o</td>
+          <td class="hand offsuit">54o</td>
+          <td class="hand pocket level5 ">44</td>
+          <td class="hand suit">43s</td>
+          <td class="hand suit">42s</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td class="hand offsuite">A3o</td>
+          <td class="hand offsuite">K3o</td>
+          <td class="hand offsuite">Q3o</td>
+          <td class="hand offsuite">J3o</td>
+          <td class="hand offsuite">T3o</td>
+          <td class="hand offsuite">93o</td>
+          <td class="hand offsuite">83o</td>
+          <td class="hand offsuite">73o</td>
+          <td class="hand offsuite">63o</td>
+          <td class="hand offsuite">53o</td>
+          <td class="hand offsuite">43o</td>
+          <td class="hand pocket level5 ">33</td>
+          <td class="hand suit">32s</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td class="hand offsuit">A2o</td>
+          <td class="hand offsuit">K2o</td>
+          <td class="hand offsuit">Q2o</td>
+          <td class="hand offsuit">J2o</td>
+          <td class="hand offsuit">T2o</td>
+          <td class="hand offsuit">92o</td>
+          <td class="hand offsuit">82o</td>
+          <td class="hand offsuit">72o</td>
+          <td class="hand offsuit">62o</td>
+          <td class="hand offsuit">52o</td>
+          <td class="hand offsuit">42o</td>
+          <td class="hand offsuit">32o</td>
+          <td class="hand pocket level5 ">22</td>
+        </tr>
+      </table>
+      <div class="result calculationBoardElement">
+        <p>全ハンド1326通り</p>
+        <div class="chosenHand">
+          <p>選択されたハンド</p>
+          <p>：</p>
+          <p id="numberOfChosenHand">0</p>
+          <p>通り　　</p>
+          <p id="ratioOfChosenHand">0</p>
+          <p>%</p>
+        </div>
+        <div class="chosenHand">
+          <p>ボードを除いたハンド数
+          </p>
+          <p>：</p>
+          <p id="numberOfChosenHandsRemoveBoardCard">0</p>
+          <p>通り　　</p>
+          <p id="ratioOfChosenHandsRemoveBoardCard">0</p>
+          <p>%</p>
+        </div>
+      </div>
+    </div>
+    <script src="javascript.js" charset="utf-8"></script>
+  </body>
+</html>

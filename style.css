@@ -1,0 +1,53 @@
+#board{
+  display: flex;
+}
+#hand{
+  display:flex;
+}
+
+.rangeElement{
+  display: inline-block;
+}
+.calculationBoard{
+  display: flex;
+}
+
+.chosenHand{
+  display: flex;
+}
+.hand{
+  background-color:rgb(247, 240, 246);
+  color:black;
+}
+.level1{
+  background-color: blue;
+  opacity: 0.8;
+}
+.level2{
+  background-color: orange;
+  opacity: 0.8;
+}
+.level3{
+  background-color: yellow;
+  opacity: 0.8;
+}
+.level4{
+  background-color: lightgreen;
+  opacity: 0.8;
+}
+.level5{
+  background-color: lightblue;
+  opacity: 0.8;
+}
+.level6{
+  background-color:rgb(245, 209, 215);
+  opacity: 0.8;
+}
+.hand:hover{
+  opacity: 0.5;
+}
+.chose{
+  background-color: black;
+  color:red;
+}
+
